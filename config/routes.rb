@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'pages#index'
+  get 'pages/secret'
+  resources :user_sessions, only: [:new, :create]
   resources :users, only: [:index, :new, :create]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
