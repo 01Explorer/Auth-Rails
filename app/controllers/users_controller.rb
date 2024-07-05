@@ -11,11 +11,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:notice: = "User Created successfully"
+      flash[:notice] = "User Created successfully"
       redirect_to users_path
     else
       flash[:alert] = "User not created"
-      render :new, status :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
